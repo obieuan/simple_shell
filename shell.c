@@ -17,6 +17,10 @@ int main(void)
     //char env_str[] = "env";
     */
 
+    char *buff = NULL;
+    size_t buff_size = 0;
+    int estatus;
+
     if(isatty(STDIN_FILENO)>0)
     {
         prompt();
@@ -24,6 +28,17 @@ int main(void)
 
     while(1) {
 
+        estatus = getline(&buff, &buff_size, stdin);
+        if (estatus == EOF)
+        {
+            write(STDOUT_FILENO, "\n",  1);
+            break;
+        }
+        if ( estatus == 0)
+        {
+            continue;
+        }
     }
+    return (0);
 }
 
