@@ -6,14 +6,24 @@
 
 void prompt()
 {
-    printf("\n");
-    printf("algo# ");
+    write(STDOUT_FILENO, "algo# ",  6);
 }
 
 int main(void)
 {
-    while(1) {
+    /*
+    //char *buff = NULL;
+    //char exit_str[] = "exit";
+    //char env_str[] = "env";
+    */
+
+    if(isatty(STDIN_FILENO)>0)
+    {
         prompt();
+    }
+
+    while(1) {
+
     }
 }
 
