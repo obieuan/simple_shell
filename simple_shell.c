@@ -6,7 +6,7 @@
 
 void prompt()
 {
-    char prompt[] = "#cisfun$ ";
+    char prompt[] = "$The empire prompt# ";
     write(STDOUT_FILENO, prompt, strlen(prompt));
 }
 
@@ -41,12 +41,10 @@ int main(void)
         }
         else if (strcmp(buff, env_str) == 0)
         {
-            write(STDOUT_FILENO, "\n",  1);
             system("env");
         }
         else
         {
-            write(STDOUT_FILENO, "\n",  1);
             system(buff);
         }
         if(isatty(STDIN_FILENO)>0)
