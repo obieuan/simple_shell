@@ -6,7 +6,7 @@
 
 void prompt()
 {
-    char prompt[] = "simple_shell> ";
+    char prompt[] = "#cisfun$ ";
     write(STDOUT_FILENO, prompt, strlen(prompt));
 }
 
@@ -37,7 +37,6 @@ int main(void)
 
         if (strcmp(buff, exit_str) == 0)
         {
-            write(STDOUT_FILENO, "\n",  1);
             break;
         }
         else if (strcmp(buff, env_str) == 0)
