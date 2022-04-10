@@ -6,7 +6,8 @@
 
 void prompt()
 {
-    write(STDOUT_FILENO, "algo# ",  6);
+    char prompt[] = "simple_shell> ";
+    write(STDOUT_FILENO, prompt, strlen(prompt));
 }
 
 int main(void)
@@ -36,14 +37,17 @@ int main(void)
 
         if (strcmp(buff, exit_str) == 0)
         {
+            write(STDOUT_FILENO, "\n",  1);
             break;
         }
         else if (strcmp(buff, env_str) == 0)
         {
+            write(STDOUT_FILENO, "\n",  1);
             system("env");
         }
         else
         {
+            write(STDOUT_FILENO, "\n",  1);
             system(buff);
         }
         if(isatty(STDIN_FILENO)>0)
