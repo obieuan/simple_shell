@@ -11,14 +11,11 @@ void prompt()
 
 int main(void)
 {
-    /*
-    //char *buff = NULL;
-    //char exit_str[] = "exit";
-    //char env_str[] = "env";
-    */
-
+    
     char *buff = NULL;
-    size_t buff_size = 0;
+    size_t buff_size = 1024;
+    char exit_str[] = "exit";
+    char env_str[] = "env";
     int estatus;
 
     if(isatty(STDIN_FILENO)>0)
@@ -28,15 +25,30 @@ int main(void)
 
     while(1) {
 
-        estatus = getline(&buff, &buff_size, stdin);
+        estatus = getline(&buff, &buff_size, stdin);            
+        
         if (estatus == EOF)
         {
             write(STDOUT_FILENO, "\n",  1);
             break;
         }
-        if ( estatus == 0)
+        buff[strlen(buff)-1] = '\0';
+
+        if (strcmp(buff, exit_str) == 0)
         {
-            continue;
+            break;
+        }
+        else if (strcmp(buff, env_str) == 0)
+        {
+            system("env");
+        }
+        else
+        {
+            system(buff);
+        }
+        if(isatty(STDIN_FILENO)>0)
+        {
+            prompt();
         }
     }
     return (0);
