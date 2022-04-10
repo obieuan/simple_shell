@@ -26,14 +26,13 @@ int main(void)
 	int estatus;
 
 	if (isatty(STDIN_FILENO) > 0)
-	{
 		prompt();
-	}
 
 	while (1)
 	{
+		/* obtengo la linea que ingresa el usuario */
 		estatus = getline(&buff, &buff_size, stdin);
-
+		/* si es un EOF termino la aplicación */
 		if (estatus == EOF)
 		{
 			write(STDOUT_FILENO, "\n",  1);
@@ -41,21 +40,15 @@ int main(void)
 		}
 		buff[strlen(buff) - 1] = '\0';
 		if (strcmp(buff, exit_str) == 0)
-		{
 			break;
-		}
 		else if (strcmp(buff, env_str) == 0)
-		{
+			/* sustituir este para manejar ENV */
 			system("env");
-		}
 		else
-		{
+			/* sustituir este para ejecutar los comandos ingresados */
 			system(buff);
-		}
 		if (isatty(STDIN_FILENO) > 0)
-		{
 			prompt();
-		}
 	}
 	return (0);
 }
