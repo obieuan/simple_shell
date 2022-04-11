@@ -16,7 +16,7 @@ void prompt(void)
 int main(void)
 {
 	char *buff = NULL;
-	
+
 	size_t buff_size = 1024;
 	char exit_str[] = "exit";
 	char env_str[] = "env";
@@ -47,7 +47,7 @@ int main(void)
 			/* sustituir este para ejecutar los comandos ingresados */
 			system(buff);
 		}
-			
+
 		if (isatty(STDIN_FILENO) > 0)
 			prompt();
 	}
