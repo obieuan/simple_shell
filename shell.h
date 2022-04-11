@@ -7,6 +7,6 @@
 #include <unistd.h>
 #include <string.h>
 
-char **dividirSTR(char *str, char *divisor);
+char **dividirString(char *str, char *divisor);
 
 #endif
