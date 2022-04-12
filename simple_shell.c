@@ -54,5 +54,6 @@ int main(void)
 		if (isatty(STDIN_FILENO) > 0)
 			prompt();
 	}
+	free(buff);
 	return (0);
 }
