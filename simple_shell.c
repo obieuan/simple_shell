@@ -41,8 +41,8 @@ int main(void)
 		if (strcmp(buff, exit_str) == 0)
 			break;
 		else if (strcmp(buff, env_str) == 0)
-		/* imprimo las variables de entorno */		
-			print_env(environ);
+		/* imprimo las variables de entorno */
+			variablesEntorno(environ);
 		else
 		{
 			/* divido la linea en tokens */
