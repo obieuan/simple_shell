@@ -44,7 +44,7 @@ char *_which(char *filename, list_path *head);
 
 /**
  * struct mybuild - pointer to function with corresponding buildin command
- * @name: uildin command
+ * @name: buildin command
  * @func: execute the buildin command
  */
 typedef struct mybuild
@@ -64,4 +64,4 @@ void freearv(char **arv);
 void free_list(list_path *head);
 
 
-#endifb
+#endif
