@@ -27,8 +27,7 @@ int main(void)
 		prompt();
 
 	while (1)
-	{
-		/* obtengo la linea que ingresa el usuario */
+	{		/* obtengo la linea que ingresa el usuario */
 		estatus = getline(&buff, &buff_size, stdin);
 		/* si es un EOF termino la aplicación */
 		if (estatus == EOF)
@@ -43,8 +42,7 @@ int main(void)
 			/* imprimo las variables de entorno */
 			variablesEntorno();
 		else
-		{
-			/* divido la linea en tokens */
+		{			/* divido la linea en tokens */
 			args = dividirString(buff, delim);
 			/* imprimo los argumentos que se obtuvieron */
 			imprimirArgumentos(args);
