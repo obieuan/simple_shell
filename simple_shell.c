@@ -46,11 +46,11 @@ int main(void)
 		{
 			/* divido la linea en tokens */
 			args = dividirString(buff, delim);
-			/imprimo los argumentos que se obtuvieron/
+			/*imprimo los argumentos que se obtuvieron*/
 			imprimirArgumentos(args);
-			/ejecuto el comando/
+			/*ejecuto el comando*/
 			ejecutarComando(args);
-			/libero la memoria/
+			/*libero la memoria*/
 			free(args);
 		}
 		if (isatty(STDIN_FILENO) > 0)
