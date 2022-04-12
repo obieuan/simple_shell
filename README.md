@@ -145,3 +145,8 @@ Simple shell 0.4 +
 - Compile: `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
 - Run the shell in interactive mode: `./hsh`
 - Or run the shell in non-interactive mode: example `echo "Hey there!" | ./hsh`
+
+---
+## AUTHORS
+Jaasiel G. López Mojica [GitHub](https://github.com/jasglm)
+Gabriel Enrique Euan Valle [GitHub](https://github.com/obieuan)
