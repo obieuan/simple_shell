@@ -9,9 +9,9 @@
  */
 char **dividirString(char *str, char *delim)
 {
-    int contador = 0, contador2 = 0;
-    char *t1 = NULL;
-    char **comandos = NULL;
+	int contador = 0, contador2 = 0;
+	char *t1 = NULL;
+	char **comandos = NULL;
 
 	t1 = strtok(str, delim);
 	while (t1 != NULL)
