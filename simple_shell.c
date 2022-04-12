@@ -45,7 +45,7 @@ int main(void)
 		{			/* divido la linea en tokens */
 			args = dividirString(buff, delim);
 			/* imprimo los argumentos que se obtuvieron */
-			imprimirArgumentos(args);
+			/* imprimirArgumentos(args); */
 			/* ejecuto el comando */
 			ejecutarComando(args);
 			/* libero la memoria */

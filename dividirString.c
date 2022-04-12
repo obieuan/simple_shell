@@ -9,29 +9,29 @@
  */
 char **dividirString(char *str, char *delim)
 {
-	int contador = 0, contador2 = 0;
-	char *t1 = NULL;
-	char **comandos = NULL;
+    int contador = 0, contador2 = 0;
+    char *t1 = NULL;
+    char **comandos = NULL;
 
-	t1 = strtok(str, delim);
-	while (t1 != NULL)
-	{
-		contador++;
-		t1 = strtok(NULL, delim);
-	}
-	comandos = malloc(sizeof(char *) * (contador + 1));
-	if (comandos == NULL)
-	{
-		perror("Error al reservar memoria");
-		exit(EXIT_FAILURE);
-	}
-	t1 = strtok(str, delim);
-	while (t1 != NULL)
-	{
-		comandos[contador2] = t1;        
-		contador2++;
-		t1 = strtok(NULL, delim);
-	}
-	comandos[contador2] = NULL;
-	return (comandos);
+    t1 = strtok(str, delim);
+    while (t1 != NULL)
+    {
+        contador++;
+        t1 = strtok(NULL, delim);
+    }
+    comandos = malloc(sizeof(char *) * (contador + 1));
+    if (comandos == NULL)
+    {
+        perror("Error al reservar memoria");
+        exit(EXIT_FAILURE);
+    }
+    t1 = strtok(str, delim);
+    while (t1 != NULL)
+    {
+        comandos[contador2] = t1;
+        contador2++;
+        t1 = strtok(NULL, delim);
+    }
+    comandos[contador2] = NULL;
+    return (comandos);
 }
