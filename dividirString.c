@@ -1,5 +1,6 @@
 #include "shell.h"
-/* Función que recibe un arreglo de char y divide la cadena en tokens
+/*
+ *Función que recibe un arreglo de char y divide la cadena en tokens
  * separados por el caracter 'delim'.
  *
  * @str: Arreglo de char que contiene la cadena a dividir.
