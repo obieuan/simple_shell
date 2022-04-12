@@ -15,9 +15,8 @@ void prompt(void)
  */
 int main(void)
 {
-	char *buff = NULL;
+	char *buff = NULL;	
 	char **args = NULL;
-	extern char **environ;
 	size_t buff_size = 1024;
 	char exit_str[] = "exit";
 	char env_str[] = "env";
@@ -42,16 +41,16 @@ int main(void)
 			break;
 		else if (strcmp(buff, env_str) == 0)
 		/* imprimo las variables de entorno */
-			variablesEntorno(environ);
+			variablesEntorno();
 		else
 		{
 			/* divido la linea en tokens */
 			args = dividirString(buff, delim);
-			/*imprimo los argumentos que se obtuvieron*/
+			/imprimo los argumentos que se obtuvieron/
 			imprimirArgumentos(args);
-			/*ejecuto el comando*/
+			/ejecuto el comando/
 			ejecutarComando(args);
-			/*libero la memoria*/
+			/libero la memoria/
 			free(args);
 		}
 		if (isatty(STDIN_FILENO) > 0)

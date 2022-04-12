@@ -1,10 +1,7 @@
 #include "shell.h"
 /* funcion que imprime las variables de entorno */
-void print_env(char **args)
+void variablesEntorno()
 {
-    int i;
-    for (i = 0; args[i] != NULL; i++)
-    {
-        printf("%i: %s\n", i, args[i]);
-    }
+    const char* s = getenv("PATH");
+    printf("PATH: %s\n", (s!=NULL)?s:"No hay PATH");
 }
