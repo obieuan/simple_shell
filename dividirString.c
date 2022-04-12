@@ -28,8 +28,7 @@ char **dividirString(char *str, char *delim)
     t1 = strtok(str, delim);
     while (t1 != NULL)
     {
-        comandos[contador2] = t1;
-        printf("%i: %s\n", contador2, comandos[contador2]);
+        comandos[contador2] = t1;        
         contador2++;
         t1 = strtok(NULL, delim);
     }

@@ -53,7 +53,7 @@ int main(void)
 			/*libero la memoria*/
 			free(args);
 
-			system(buff);
+			/* system(buff); */
 		}
 			
 		if (isatty(STDIN_FILENO) > 0)
