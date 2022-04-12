@@ -1,12 +1,10 @@
 #include "shell.h"
-/*
- *Función que recibe un arreglo de char y divide la cadena en tokens
- * separados por el caracter 'delim'.
- *
+/**
+ * dividirString - Función que recibe un arreglo de char y divide la cadena
+ * en tokens separados por el caracter 'delim'.
  * @str: Arreglo de char que contiene la cadena a dividir.
- * @delim: Caracter que separa los tokens.
- *
- * Return: Un arreglo de char con los tokens.
+ * @delim: Caracter que separa los tokens
+ * Return: Nothing
  */
 char **dividirString(char *str, char *delim)
 {

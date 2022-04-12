@@ -1,8 +1,9 @@
 #include "shell.h"
-/*
-* Función que ejecuta el comando que se le pasa como argumento.
- * @args: Arreglo de char que contiene los argumentos del comando.
- * Return: nothing.
+/**
+ * ejecutarComando - Función que ejecuta el comando que se le pasa como
+ * argumento.
+ * @args: Arreglo de char que contiene la cadena a dividir.
+ * Return: Nothing
  */
 void ejecutarComando(char **args)
 {

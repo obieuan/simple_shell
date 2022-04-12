@@ -1,5 +1,8 @@
 #include "shell.h"
-/* funcion que imprime las variables de entorno */
+/**
+ * variablesEntorno - funcion que imprime las variables de entorno
+ * Return: Nothing
+ */
 void variablesEntorno(void)
 {
 	const char *s = getenv("PATH");

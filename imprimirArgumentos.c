@@ -1,5 +1,9 @@
 #include "shell.h"
-/* funcion que imprime los argumentos que se le pasan */
+/**
+ * imprimirArgumentos - funcion que imprime los argumentos que se le pasan
+ * @args: Arreglo de char que contiene los argumentos.
+ * Return: Nothing
+ */
 void imprimirArgumentos(char **args)
 {
 	int i;
