@@ -44,9 +44,15 @@ int main(void)
 			system("env");
 		else
 		{
-			/* sustituir este para ejecutar los comandos ingresados */
+			/* divido la linea en tokens */
 			args = dividirString(buff, delim);
-			printf("%s\n", args[0]);
+			/*imprimo los argumentos que se obtuvieron*/
+			imprimirArgumentos(args);
+			/*ejecuto el comando*/
+			ejecutarComando(args);
+			/*libero la memoria*/
+			free(args);
+
 			system(buff);
 		}
 			
