@@ -20,7 +20,7 @@ int main(void)
 	size_t buff_size = 1024;
 	char exit_str[] = "exit";
 	char env_str[] = "env";
-	char delim[] = " ";
+	char delim[] =  " \t\r\n\a";
 	int estatus;
 
 	if (isatty(STDIN_FILENO) > 0)
