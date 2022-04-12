@@ -15,7 +15,7 @@ void prompt(void)
  */
 int main(void)
 {
-	char *buff = NULL;	
+	char *buff = NULL;
 	char **args = NULL;
 	size_t buff_size = 1024;
 	char exit_str[] = "exit";
@@ -25,10 +25,8 @@ int main(void)
 
 	if (isatty(STDIN_FILENO) > 0)
 		prompt();
-
 	while (1)
-	{
-		/* obtengo la linea que ingresa el usuario */
+	{	/* obtengo la linea que ingresa el usuario */
 		estatus = getline(&buff, &buff_size, stdin);
 		/* si es un EOF termino la aplicación */
 		if (estatus == EOF)
@@ -40,7 +38,7 @@ int main(void)
 		if (strcmp(buff, exit_str) == 0)
 			break;
 		else if (strcmp(buff, env_str) == 0)
-		/* imprimo las variables de entorno */
+			/* imprimo las variables de entorno */
 			variablesEntorno();
 		else
 		{
