@@ -8,7 +8,7 @@ void sig_handler(int sig_num)
 {
 	if (sig_num == SIGINT)
 	{
-		_puts("\n#theEmpirePrompt$ ");
+		_puts("\n#cisfun$ ");
 	}
 }
 
@@ -69,7 +69,7 @@ int main(void)
 			f = checkbuild(arv);
 			if (f)
 			{
-				// free(buff);
+				free(buff);
 				f(arv);
 			}
 			else if (!pathname)
