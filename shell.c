@@ -69,7 +69,7 @@ int main(void)
 			f = checkbuild(arv);
 			if (f)
 			{
-				free(buff);
+//				free(buff);
 				f(arv);
 			}
 			else if (!pathname)
