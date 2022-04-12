@@ -16,11 +16,11 @@ void prompt(void)
 int main(void)
 {
 	char *buff = NULL;
-
+	char **args = NULL;
 	size_t buff_size = 1024;
 	char exit_str[] = "exit";
 	char env_str[] = "env";
-	
+	char delim[] = " ";
 	int estatus;
 
 	if (isatty(STDIN_FILENO) > 0)
@@ -45,9 +45,11 @@ int main(void)
 		else
 		{
 			/* sustituir este para ejecutar los comandos ingresados */
+			args = dividirString(buff, delim);
+			printf("%s\n", args[0]);
 			system(buff);
 		}
-
+			
 		if (isatty(STDIN_FILENO) > 0)
 			prompt();
 	}
