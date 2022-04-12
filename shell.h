@@ -10,7 +10,7 @@
 char **dividirString(char *str, char *divisor);
 void imprimirArgumentos(char **args);
 void ejecutarComando(char **args);
-void variablesEntorno();
+void variablesEntorno(void);
 
 
 #endif
