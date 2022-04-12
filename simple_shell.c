@@ -25,10 +25,8 @@ int main(void)
 
 	if (isatty(STDIN_FILENO) > 0)
 		prompt();
-
 	while (1)
-	{
-		/* obtengo la linea que ingresa el usuario */
+	{ /* obtengo la linea que ingresa el usuario */
 		estatus = getline(&buff, &buff_size, stdin);
 		/* si es un EOF termino la aplicación */
 		if (estatus == EOF)
