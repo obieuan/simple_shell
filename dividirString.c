@@ -8,29 +8,33 @@
  */
 char **dividirString(char *str, char *delim)
 {
-	int contador = 0, contador2 = 0;
-	char *t1 = NULL;
-	char **comandos = NULL;
+	char *token = NULL, *token2 = NULL, *str2 = NULL;
+	int strings = 0, i = 0;
+	char **stringArr = NULL;
 
-	t1 = strtok(str, delim);
-	while (t1 != NULL)
+	str2 = _strdup(str);
+	token = strtok(str, delim);
+
+	while (token)
 	{
-		contador++;
-		t1 = strtok(NULL, delim);
+		strings++;
+		token = strtok(NULL, delim);
 	}
-	comandos = malloc(sizeof(char *) * (contador + 1));
-	if (comandos == NULL)
+
+	stringArr = malloc(sizeof(char *) * (strings + 1));
+	if (!stringArr)
+		return (NULL);
+	token2 = strtok(str2, delim);
+
+	while (token2)
 	{
-		perror("Error al reservar memoria");
-		exit(EXIT_FAILURE);
+		stringArr[i] = _strdup(token2);
+		token2 = strtok(NULL, delim);
+		i++;
 	}
-	t1 = strtok(str, delim);
-	while (t1 != NULL)
-	{
-		comandos[contador2] = t1;
-		contador2++;
-		t1 = strtok(NULL, delim);
-	}
-	comandos[contador2] = NULL;
-	return (comandos);
+
+	stringArr[i] = NULL;
+	free(token2);
+	free(str2);
+	return (stringArr);
 }

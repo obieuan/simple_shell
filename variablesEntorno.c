@@ -5,7 +5,11 @@
  */
 void variablesEntorno(void)
 {
-	const char *s = getenv("PATH");
+	int  x = 0;
 
-	printf("PATH: %s\n", (s != NULL) ? s : "No hay PATH");
+	while (environ && environ[x])
+		{
+			printf("%s\n", environ[x]);
+			x++;
+		}
 }

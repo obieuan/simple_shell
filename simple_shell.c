@@ -15,41 +15,36 @@ void prompt(void)
  */
 int main(void)
 {
-	char *buff = NULL;
-	char **args = NULL;
-	size_t buff_size = 1024;
-	char exit_str[] = "exit";
-	char env_str[] = "env";
-	char delim[] =  " \t\r\n\a";
+	char *buff = NULL, space[1] = " ";
+	size_t buff_size = 0;
+	char exit_str[6] = "exit", env_str[4] = "env", delim[2] =  " ";
 	int estatus;
 
 	if (isatty(STDIN_FILENO) > 0)
 		prompt();
-
 	while (1)
 	{		/* obtengo la linea que ingresa el usuario */
 		estatus = getline(&buff, &buff_size, stdin);
 		/* si es un EOF termino la aplicación */
 		if (estatus == EOF)
 		{
-			write(STDOUT_FILENO, "\n",  1);
 			break;
 		}
-		buff[strlen(buff) - 1] = '\0';
+		buff[estatus - 1] = '\0';
 		if (strcmp(buff, exit_str) == 0)
-			break;
+		{
+			free(buff);
+			exit(1);
+		}
 		else if (strcmp(buff, env_str) == 0)
 			/* imprimo las variables de entorno */
 			variablesEntorno();
 		else
-		{			/* divido la linea en tokens */
-			args = dividirString(buff, delim);
-			/* imprimo los argumentos que se obtuvieron */
-			/* imprimirArgumentos(args); */
+		{	/* divido la linea en tokens */
+			if (buff[0] == space[0])
+				buff = borrarEspacio(buff, 0);
 			/* ejecuto el comando */
-			ejecutarComando(args);
-			/* libero la memoria */
-			free(args);
+			ejecutarComando(dividirString(buff, delim), buff);
 		}
 		if (isatty(STDIN_FILENO) > 0)
 			prompt();
